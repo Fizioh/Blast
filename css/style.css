@@ -8,4 +8,15 @@ body, html {
     overflow: hidden;
 }
 
-.
+.text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: bolder;
+    position: absolute;
+    top: 50px;
+    left: 25%;
+    right: 30%;
+    text-align: center;
+}
