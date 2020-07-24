@@ -18,3 +18,31 @@ document.addEventListener('click', function(e) {
     Circ.
     replay();
 });
+
+//création de l'explosion en traits
+
+const burst1 = new mojs.Burst({
+    left: 0, top: 0,
+    count: 7,
+    radius: { 50: 250 },
+    children: {
+        fill: 'white',
+        shape: 'polygon',
+        stroke: {'white':'#A50710'},
+        strokeWidth: 4,
+        radius: 'rand(30,60)',
+        radiusY: 0,
+        scale: {1:0},
+        pathScale: 'rand(.5, 1)',
+        degree: 360,
+        isForce3d: true }
+});
+
+document.addEventListener('click', function(e) {
+    burst1.
+    tune ({x: e.pageX, y: e.pageY }).
+    generate().
+    replay();
+    Circ.
+    replay();
+});
