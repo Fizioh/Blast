@@ -72,5 +72,32 @@ document.addEventListener('click', function(e) {
 
 const CIRCLE_OPTS = {
     left: 0, top: 0,
-    fill: white
-}
+    fill: 'white',
+    scale: {2:1},
+    opacity: {1:0},
+    isForce3d: true,
+    isShozEnd: false
+};
+
+const circle1 = new mojs.Shape({
+    ...CIRCLE_OPTS,
+    radius: 100 });
+    const circle2 = new mojs.Shape({
+        ...CIRCLE_OPTS,
+        radius: 140,
+    easing: 'cubic.out',
+    delay: 300 });
+
+
+    document.addEventListener('click', function(e) {
+        circle1.
+        tune ({x: e.pageX, y: e.pageY }).
+        generate().
+        replay();
+        circle2.
+        tune({ x: e.pageX, y: e.pageY}).
+        generate(). 
+        replay(); 
+        Circ.
+        replay();
+    });
