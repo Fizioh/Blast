@@ -89,6 +89,22 @@ const circle1 = new mojs.Shape({
     delay: 300 });
 
 
+ 
+
+    const openBackground = new mojs.Shape({
+        fill: '#FC2D79',
+        left: 0, top: 0,
+        scale: { 0: 2.5},
+        isShowStart: true,
+        radius: 15,
+        isForce3d: true,
+        isTimelineLess: true, 
+        delay: 350,
+        radius: 200,
+        easing: 'cubic.out',
+        backwarding: 'expo.in', 
+    });
+
     document.addEventListener('click', function(e) {
         circle1.
         tune ({x: e.pageX, y: e.pageY }).
@@ -98,6 +114,9 @@ const circle1 = new mojs.Shape({
         tune({ x: e.pageX, y: e.pageY}).
         generate(). 
         replay(); 
+        openBackground.
+        tune({ x: e.pageX, y: e.pageY }).
+        replay();
         Circ.
         replay();
     });
