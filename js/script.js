@@ -38,11 +38,39 @@ const burst1 = new mojs.Burst({
         isForce3d: true }
 });
 
+
+const burst2 = new mojs.Burst({
+    top: 0, left: 0,
+    count: 4,
+    radius: { 0:250 },
+    children: {
+        shape: ['circle','rect'],
+        points: 5,
+        fill: ['white'],
+        radius: 'rand(30,60)',
+        delay: 'stagger(200)',
+        easing: ['cubic.out', 'cubic.out', 'cubic.out'],
+        scale: {1:0},
+        pathScale: 'rand(.5, 1)',
+        isForce3d: true }
+});
+
 document.addEventListener('click', function(e) {
     burst1.
     tune ({x: e.pageX, y: e.pageY }).
     generate().
     replay();
+    burst2.
+    tune({ x: e.pageX, y: e.pageY}).
+    generate(). 
+    replay(); 
     Circ.
     replay();
 });
+
+//creating the variable with similar parameter
+
+const CIRCLE_OPTS = {
+    left: 0, top: 0,
+    fill: white
+}
