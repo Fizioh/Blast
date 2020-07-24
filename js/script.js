@@ -10,11 +10,11 @@ const Circ = new mojs.Shape({
     left: '50%',
     duration: 1500,
     delay: 300,
-    easing: 'clubic.out',
+    easing: 'cubic.out',
     isShowEnd: false,
 });
 
 document.addEventListener('click', function(e) {
-    Circ,
+    Circ.
     replay();
 });
